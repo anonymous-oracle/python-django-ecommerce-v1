@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):
@@ -21,13 +22,14 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     in_stock = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True) # is product available to buy even though in stock
     created = models.DateTimeField(auto_now_add=True) # fills in the timestamp value when the entry is created
     updated = models.DateTimeField(auto_now=True) # updates the field when the entry is updated
 
     class Meta:
         verbose_name_plural = 'Products'
-        ordering = ('-created') # when the data is returned it sorts by the created timestamp in desc order
-        # ordering = ('created') # when the data is returned it sorts by the created timestamp in asc order
+        ordering = ('-created',) # when the data is returned it sorts by the created timestamp in desc order
+        # ordering = ('created',) # when the data is returned it sorts by the created timestamp in asc order
 
     def __str__(self) -> str:
         return self.title
