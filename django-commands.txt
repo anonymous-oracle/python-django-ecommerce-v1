@@ -1,0 +1,3 @@
+./manage.py startapp blog
+django-admin startproject someProject .
+./manage.py runserver
