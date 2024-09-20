@@ -23,4 +23,6 @@ py manage.py startapp store
 
 - now in admin.py, some products, categories, etc will be added to populate the database
 
-- run './manage.py createsuperuser' with username as github username, email address, password (on local system keep password blank)
+- run './manage.py createsuperuser' with username as github username, email address, password (on local system keep password or enter a password which invalidates the validation and then accept the password bypass on local)
+
+- run './manage.py runserver' to get the server running
