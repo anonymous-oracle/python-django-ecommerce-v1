@@ -1,3 +1,8 @@
 ./manage.py startapp blog
 django-admin startproject someProject .
 ./manage.py runserver
+./manage.py createsuperuser
+./manage,py makemigrations
+./manage.py migrate
+./manage.py sqlmigrate blog 0001
+./manage.py shell
